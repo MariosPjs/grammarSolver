@@ -1,0 +1,19 @@
+for this program we will have some things that we will not have to worry about
+    -knowing whether  each string that we are going through in the dictionary is going to is a part of the non-terminal symbol for the rules or part of the words.
+        - we know this because we use the ::= for each string to seperate the nonterminal symbols and rules (the left of the "::=" is going to be non-terminal and left is the rules)
+        -if there is no bars in a terminal then your non-terminal is going to have one rule
+        -non-terminal symbols are going to have a "<>" inbetween them and there will be cases where there is not so be careful and write a program so that you know that you are working on a non-terminal symbol.
+        -there is going to be duplicates so that means that the chances of that rule poping up is going to increase.
+
+  we will store the grammar using a map data structure witch the key value pairs that allow duplicates
+    -we will store the non-terminal symbols to the keys and the rules that follow for the values
+        - the keys will be stored as a string keeping the "<>"or adding the "<>" in the string if there is none (may change this logic later)
+        - the values will be a <String> list for each keys
+
+  Important things to note!
+        -Random class in java.util
+        -String class has a method called “trim” that will return a new version of the string minus any
+         leading or trailing whitespace
+        -One problem you will have to deal with is breaking up strings into various parts. You should use
+         the split method of the String class to do so
+        -
