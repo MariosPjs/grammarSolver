@@ -48,19 +48,20 @@ public class GrammarSolver {
         System.out.println("Symbol: " + symbol);
 
         String[] value = map.get(symbol);
+        if(value == null){
+            return symbol;
+        }
         System.out.println("current symbol array: " + Arrays.toString(value));
         String rule = value[rand.nextInt(value.length)];
         rule = rule.trim();
         System.out.println("rule that was picked: " + rule);
-        String[] check = rule.split("\\(|\\)|-|\\s+");
+        String[] check = rule.split("[ \t]+");
         System.out.println("check array: " + Arrays.toString(check));
         String word = check[rand.nextInt(check.length)];
         System.out.println("word that was picked: " + word);
 
-
         if(map.containsKey(word)){
             System.out.println("    Picking: " + (check[0]));
-
             sentence = sentence  + generateSentence(check[0]);
             for(int i = 1; i < check.length; i++){
                 sentence = sentence + " " + generateSentence(check[i]) ;
